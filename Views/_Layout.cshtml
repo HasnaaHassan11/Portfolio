@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Hasnaa Portfolio</title>
+
+    <!-- Favicons -->
+    <link href="~/assets/img/favicon.png" rel="icon" />
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts (Optimized) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/glightbox/css/glightbox.css" rel="stylesheet" />
+
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-grid.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-grid.min.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css.map"></a>
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-grid.css" rel="stylesheet" />
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-reboot.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css.map"></a>
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-reboot.css" rel="stylesheet" />
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-utilities.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-utilities.min.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css.map"></a>
+    <a href="~/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css.map"></a>
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-utilities.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css" rel="stylesheet" />
+    <link href="~/assets/vendor/bootstrap/css/bootstrap-utilities.css" rel="stylesheet" />
+
+
+
+
+    <!-- Main CSS File -->
+    <link href="~/assets/css/main.css" rel="stylesheet" />
+
+    
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center light-background sticky-top">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="~/img/logo.png" alt=""> -->
+                <h1 class="sitename">Hasnaa</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Home" asp-action="About" class="active">About</a></li>
+                    <li><a asp-controller="Resume" asp-action="Index">Resume</a></li>
+                    <li><a asp-controller="Portfolio" asp-action="Index">Portfolio</a></li>
+                    <li><a asp-controller="Contact" asp-action="Index">Contact</a> </li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+            <div class="header-social-links">
+                <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.facebook.com/hasnaa.hassan.140216" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/hasnaa_hassan_11/" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/hasnaa-hassan-32002525b/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+        </div>
+    </header>
+   
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer id="footer" class="footer light-background">
+        <div class="container">
+            <div class="copyright text-center">
+                <p>© Copyright <strong class="px-1 sitename">Hasnaa</strong> All Rights Reserved</p>
+            </div>
+            <div class="social-links d-flex justify-content-center">
+                <a href="https://www.facebook.com/hasnaa.hassan.140216" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/hasnaa-hassan-32002525b/"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor JS Files (Optimized Order) -->
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="~/assets/vendor/aos/aos.js" defer></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+
+    <!-- Main JS File -->
+    <script src="~/assets/js/main.js" defer></script>
+
+    <script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/assets/vendor/glightbox/js/glightbox.js"></script>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
