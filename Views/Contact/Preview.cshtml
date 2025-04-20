@@ -1,0 +1,26 @@
+﻿@model Portfolio.ViewModels.ContactViewModel
+
+@{
+    ViewData["Title"] = "Preview";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Review Your Information</h2>
+
+<div>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Subject:</strong> @Model.Subject</p>
+    <p><strong>Message:</strong> @Model.Message</p>
+</div>
+
+<form asp-action="Submit" method="post">
+    <input type="hidden" asp-for="Name" />
+    <input type="hidden" asp-for="Email" />
+    <input type="hidden" asp-for="Subject" />
+    <input type="hidden" asp-for="Message" />
+
+    <button asp-action="Submit" type="submit" class="btn btn-success">Confirm & Submit</button>
+    <a asp-action="Index" class="btn btn-secondary">Go Back</a>
+</form>
+
