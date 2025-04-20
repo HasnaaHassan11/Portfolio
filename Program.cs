@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Data;
+using Portfolio.Helpers;
+using Portfolio.Settings;
 
 namespace Portfolio
 {
@@ -13,6 +15,14 @@ namespace Portfolio
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<AppDbContext>(options =>
                  options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
+
+            // Configure SmtpSettings
+            builder.Services.Configure<SmtpSettings>(
+                 builder.Configuration.GetSection("SmtpSettings"));
+            // Add EmailService
+            builder.Services.AddTransient<EmailService>();
+
+
 
 
             var app = builder.Build();

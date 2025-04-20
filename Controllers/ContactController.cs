@@ -3,16 +3,26 @@ using Microsoft.EntityFrameworkCore;
 using Portfolio.Data;
 using Portfolio.Models;
 using Portfolio.ViewModels;
+using Microsoft.Extensions.Options;
+using Portfolio.Settings;
+using Portfolio.Helpers;
+using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
+
 
 namespace Portfolio.Controllers
 {
     public class ContactController : Controller
     {
-        public ContactController(AppDbContext db)
+        public ContactController(AppDbContext db , IOptions<SmtpSettings> smtpOptions , EmailService emailService)
         {
             _db = db;
+            _smtpOptions = smtpOptions.Value;
+            _emailService = emailService;
         }
         private readonly AppDbContext _db;
+        private readonly SmtpSettings _smtpOptions;
+        private readonly EmailService _emailService;
+
         public IActionResult Index()
         {
             return View();
@@ -44,6 +54,15 @@ namespace Portfolio.Controllers
 
             _db.Contacts.Add(contact);
             _db.SaveChanges();
+
+            // Send email
+            var messageBody = $"You received a new message from the contact form:\n\n" +
+                      $"Name: {model.Name}\n" +
+                      $"Email: {model.Email}\n" +
+                      $"Subject: {model.Subject}\n" +
+                      $"Message:\n{model.Message}";
+            _emailService.SendEmail("New Message From Contact Form", messageBody);
+
 
             return RedirectToAction("Success");
         }
